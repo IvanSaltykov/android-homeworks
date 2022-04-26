@@ -27,7 +27,11 @@ class TasksFragment : Fragment() {
                 CategoryFragment(),
                 CategoryFragment()
             )
-        adapterPager = PagerAdapterTasks(requireActivity().supportFragmentManager, fragments, lifecycle)
+        adapterPager = PagerAdapterTasks(
+            requireActivity().supportFragmentManager,
+            fragments,
+            lifecycle
+        )
         binding.viewPagerTasks.adapter = adapterPager
         TabLayoutMediator(binding.tabLayoutTasks, binding.viewPagerTasks) { tab, position ->
             tab.text = when (position) {

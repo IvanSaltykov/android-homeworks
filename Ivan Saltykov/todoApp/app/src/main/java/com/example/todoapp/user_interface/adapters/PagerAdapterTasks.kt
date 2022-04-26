@@ -5,7 +5,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.todoapp.user_interface.fragment.CategoryFragment
-import com.example.todoapp.user_interface.fragment.TasksFragment
 
 class PagerAdapterTasks(
     fragmentManager: FragmentManager,
