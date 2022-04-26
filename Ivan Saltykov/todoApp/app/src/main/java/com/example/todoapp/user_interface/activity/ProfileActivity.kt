@@ -1,4 +1,4 @@
-package com.example.todoapp
+package com.example.todoapp.user_interface.activity
 
 import android.os.Bundle
 import android.view.Menu
@@ -7,7 +7,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.example.todoapp.R
 import com.example.todoapp.databinding.ActivityProfileBinding
+import com.example.todoapp.preferences.PreferencesManager
+import com.example.todoapp.user_interface.fragment.ProfileFragment
+import com.example.todoapp.user_interface.fragment.TasksFragment
 
 class ProfileActivity : AppCompatActivity() {
     lateinit var binding: ActivityProfileBinding

@@ -1,6 +1,7 @@
-package com.example.todoapp
+package com.example.todoapp.user_interface.validation
 
 import android.content.Context
+import com.example.todoapp.R
 
 class Validator(private val context: Context) {
     fun checkPassword(userPassword: String): String? {

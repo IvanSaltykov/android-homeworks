@@ -1,15 +1,16 @@
-package com.example.app
+package com.example.todoapp.user_interface.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todoapp.databinding.ItemTaskBinding
+import com.example.todoapp.models.TaskResponse
 
 class TasksAdapter(
-    private val listener: ListenerDataBase
+    private val itemClickListener: OnItemClickListener
 ) : RecyclerView.Adapter<TaskViewHolder>() {
-    private var items = mutableListOf<Task>()
+    private var items = mutableListOf<TaskResponse>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(
@@ -18,24 +19,20 @@ class TasksAdapter(
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        holder.bind(items[position], listener)
+        val item = items.get(position)
+        holder.bind(item, itemClickListener)
     }
 
     override fun getItemCount() = items.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(tasks: List<Task>) {
+    fun submitList(tasks: List<TaskResponse>) {
         items.clear()
         items.addAll(tasks)
         notifyDataSetChanged()
     }
-
-    fun addItem(task: Task) {
-        items.add(task)
-        notifyItemInserted(items.lastIndex)
-    }
-
-    interface ListenerDataBase {
-        fun upgradeTask(task: Task)
+    interface OnItemClickListener {
+        fun onItemCliked(task: TaskResponse)
+        fun onItemLongCliked(task: TaskResponse)
     }
 }

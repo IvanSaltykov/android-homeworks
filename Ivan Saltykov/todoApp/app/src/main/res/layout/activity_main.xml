@@ -1,76 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".GetStartedActivity"
+    tools:context=".user_interface.activity.GetStartedActivity"
     android:id="@+id/getStartedActivity">
 
-    <ImageView
-        android:id="@+id/imageViewGetStartedPeople"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewElips1"
-        app:srcCompat="@drawable/img_getstarted" />
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp">
+        <ImageView
+            android:id="@+id/imageViewGetStartedPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_getstarted"
+            android:layout_gravity="center_horizontal"/>
 
-    <TextView
-        android:id="@+id/textViewGetStartedGreeting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/getstarted_greeting"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewGetStartedPeople"
-        app:layout_constraintStart_toStartOf="@+id/imageViewGetStartedPeople"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewGetStartedPeople" />
+        <TextView
+            android:id="@+id/textViewGetStartedGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/getstarted_greeting"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewGetStartedGreetingText"
-        android:layout_width="315dp"
-        android:layout_height="89dp"
-        android:text="@string/getstarted_greeting2"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewGetStartedGreeting"
-        app:layout_constraintStart_toStartOf="@+id/textViewGetStartedGreeting"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGetStartedGreeting" />
+        <TextView
+            android:id="@+id/textViewGetStartedGreetingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/getstarted_greeting2"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonGetStarted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:backgroundTint="@color/yellow_button"
-        android:paddingStart="90dp"
-        android:paddingTop="18dp"
-        android:paddingEnd="90dp"
-        android:paddingBottom="18dp"
-        android:text="@string/getstarted_button"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:cornerRadius="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/textViewGetStartedGreetingText"
-        app:layout_constraintStart_toStartOf="@+id/textViewGetStartedGreetingText"
-        app:layout_constraintTop_toBottomOf="@+id/textViewGetStartedGreetingText" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonGetStarted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="@color/yellow_button"
+            android:paddingStart="90dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="90dp"
+            android:paddingBottom="18dp"
+            android:text="@string/getstarted_button"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="15dp" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageViewElips1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/getStartedActivity"
-        app:layout_constraintTop_toTopOf="@+id/getStartedActivity"
+        android:layout_gravity="top|start"
         app:srcCompat="@drawable/ic_yellow_ellips_horizontal" />
 
     <ImageView
@@ -78,8 +70,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="88dp"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewElips1"
-        app:layout_constraintStart_toStartOf="@id/imageViewElips1"
-        app:layout_constraintTop_toTopOf="@+id/imageViewElips1"
+        android:layout_gravity="top|start"
         app:srcCompat="@drawable/ic_yellow_ellips_vertical" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

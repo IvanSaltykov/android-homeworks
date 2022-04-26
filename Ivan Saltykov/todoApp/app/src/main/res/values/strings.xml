@@ -61,4 +61,22 @@
     <string name="exit">Exit</string>
     <string name="nav_open_drawer">Open navigation drawer</string>
     <string name="nav_close_drawer">Close navigation drawer</string>
+
+    <!--Строки диалогов-->
+    <string name="task">task</string>
+    <string name="pozition_button_add">Add</string>
+    <string name="negativ_button_cancel">Cancel</string>
+    <string name="pozitiv_button_yes">Yes</string>
+    <string name="negativ_button_no">No</string>
+    <string name="delete_question">Delete a task?</string>
+    <string name="newtask_title">New Task</string>
+
+    <!--Ответы на запросы-->
+    <string name="no_token">Нет токенв</string>
+    <string name="no_task">Задача с указанным id не найдена/прочие проблемы</string>
+    <string name="not_found_task">"Проблемы при получении задач"</string>
+    <string name="not_text_task">Отсутствует текст задачи</string>
+    <string name="problem_sign">Проблемы при входе в аккаунт</string>
+    <string name="error_login_or_password">Неправильный логин или пароль</string>
+    <string name="incorrect_input">Некорректно введены данные регистрации/прочие ошибки</string>
 </resources>

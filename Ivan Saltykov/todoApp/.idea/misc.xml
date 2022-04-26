@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.24114583333333334" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24114583333333334" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/drawable/ic_menu_open.xml" value="0.22592592592592592" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/drawable/ic_oval.xml" value="0.24114583333333334" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/drawable/ic_tasks.xml" value="0.24114583333333334" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/activity_header_drawer.xml" value="0.22447916666666667" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/activity_profile.xml" value="0.22447916666666667" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/activity_register.xml" value="0.221025641025641" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/dialog_new_task.xml" value="0.22" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/fragment_category.xml" value="0.18055555555555555" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/fragment_profile.xml" value="0.22447916666666667" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/fragment_tasks.xml" value="0.22447916666666667" />
@@ -15,6 +21,8 @@
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/layout/item_task.xml" value="0.22447916666666667" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/menu/bottom_navigation_profile.xml" value="0.22447916666666667" />
         <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/menu/toolbar_profile.xml" value="0.22447916666666667" />
+        <entry key="..\:/android-homeworks/Ivan Saltykov/todoApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.24114583333333334" />
+        <entry key="..\:/android/Ivan Saltykov/todoApp/app/src/main/res/layout/fragment_tasks.xml" value="0.22447916666666667" />
         <entry key="..\:/kotlin/todoApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21574074074074073" />
         <entry key="..\:/kotlin/todoApp/app/src/main/res/drawable/ic_add.xml" value="0.21574074074074073" />
         <entry key="..\:/kotlin/todoApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21574074074074073" />

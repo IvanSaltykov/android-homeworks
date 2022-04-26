@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".RegisterActivity"
+    tools:context=".user_interface.activity.RegisterActivity"
     android:id="@+id/registerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewElips1"
         android:orientation="vertical"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_vertical">
 
         <TextView
             android:id="@+id/textViewRegisterGreeting"
@@ -197,18 +195,23 @@
         android:id="@+id/imageViewElips1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/registerActivity"
-        app:layout_constraintTop_toTopOf="@+id/registerActivity"
-        app:srcCompat="@drawable/ic_yellow_ellips_horizontal" />
+        app:srcCompat="@drawable/ic_yellow_ellips_horizontal"
+        android:layout_gravity="top|start"/>
 
     <ImageView
         android:id="@+id/imageViewElips2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/imageViewElips1"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewElips1"
-        app:layout_constraintTop_toTopOf="@+id/imageViewElips1"
         app:srcCompat="@drawable/ic_yellow_ellips_vertical"
-        android:layout_marginEnd="88dp"/>
+        android:layout_marginEnd="88dp"
+        android:layout_gravity="top|start"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/progressBarRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+</FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity"
+    tools:context=".user_interface.activity.ProfileActivity"
     android:id="@+id/drawerLayoutProfile">
 
     <FrameLayout
@@ -13,7 +13,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentcontainerprofile"
-            android:name="com.example.todoapp.ProfileFragment"
+            android:name="com.example.todoapp.user_interface.fragment.ProfileFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
