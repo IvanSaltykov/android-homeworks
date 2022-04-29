@@ -70,6 +70,7 @@
     <string name="negativ_button_no">No</string>
     <string name="delete_question">Delete a task?</string>
     <string name="newtask_title">New Task</string>
+    <string name="field_emptiness_error">The field should not be empty</string>
 
     <!--Ответы на запросы-->
     <string name="no_token">Нет токенв</string>

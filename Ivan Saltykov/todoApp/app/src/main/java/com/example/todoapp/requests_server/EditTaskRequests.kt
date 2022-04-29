@@ -25,20 +25,20 @@ class EditTaskRequests(
                 ) {
                     if (response.isSuccessful) {
                         adapter.submitList(response.body()!!)
-                        action.onErrorAnswer("Обновление")
+                        action.onErrorResponse("Обновление")
                     } else
                         when (response.code()) {
-                            400 -> action.onErrorAnswer(context.getString(R.string.not_found_task))
+                            400 -> action.onErrorResponse(context.getString(R.string.not_found_task))
                             401 -> {
-                                action.onErrorAnswer(context.getString(R.string.no_token))
+                                action.onErrorResponse(context.getString(R.string.no_token))
                                 action.onNoToken()
                             }
                         }
-                    action.onAnswer(View.GONE)
+                    action.onResponse(View.GONE)
                 }
                 override fun onFailure(call: Call<List<TaskResponse>>, t: Throwable) {
-                    action.onErrorAnswer(t.message.toString())
-                    action.onAnswer(View.GONE)
+                    action.onErrorResponse(t.message.toString())
+                    action.onResponse(View.GONE)
                 }
             })
     }
@@ -49,16 +49,16 @@ class EditTaskRequests(
                     if (response.isSuccessful)
                         getTask()
                     else
-                        action.onErrorAnswer(context.getString(R.string.no_task))
+                        action.onErrorResponse(context.getString(R.string.no_task))
                 }
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    action.onErrorAnswer(t.message.toString())
+                    action.onErrorResponse(t.message.toString())
                 }
             }
         )
     }
     fun putTask(tasknew: TaskNew) {
-        action.onAnswer(View.VISIBLE)
+        action.onResponse(View.VISIBLE)
         ApiService.retrofit.putTask(tasknew, "Bearer $token").enqueue(
             object : Callback<Unit> {
                 override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
@@ -66,15 +66,15 @@ class EditTaskRequests(
                         getTask()
                     else
                         when (response.code()) {
-                            400 -> action.onErrorAnswer(context.getString(R.string.not_text_task))
+                            400 -> action.onErrorResponse(context.getString(R.string.not_text_task))
                             401 -> {
-                                action.onErrorAnswer(context.getString(R.string.no_token))
+                                action.onErrorResponse(context.getString(R.string.no_token))
                                 action.onNoToken()
                             }
                         }
                 }
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    action.onErrorAnswer(t.message.toString())
+                    action.onErrorResponse(t.message.toString())
                 }
             }
         )
@@ -87,22 +87,22 @@ class EditTaskRequests(
                         getTask()
                     else
                         when (response.code()) {
-                            400 -> action.onErrorAnswer(context.getString(R.string.no_task))
+                            400 -> action.onErrorResponse(context.getString(R.string.no_task))
                             401 -> {
-                                action.onErrorAnswer(context.getString(R.string.no_token))
+                                action.onErrorResponse(context.getString(R.string.no_token))
                                 action.onNoToken()
                             }
                         }
                 }
                 override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    action.onErrorAnswer(t.message.toString())
+                    action.onErrorResponse(t.message.toString())
                 }
             }
         )
     }
     interface ActionsListener {
-        fun onErrorAnswer(text: String)
-        fun onAnswer(visibility: Int)
+        fun onErrorResponse(text: String)
+        fun onResponse(visibility: Int)
         fun onNoToken()
     }
 }

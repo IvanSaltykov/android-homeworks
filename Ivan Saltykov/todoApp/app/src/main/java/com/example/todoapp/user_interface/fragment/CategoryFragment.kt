@@ -1,6 +1,7 @@
 package com.example.todoapp.user_interface.fragment
 
 import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +25,9 @@ class CategoryFragment :
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var adapter: TasksAdapter
     private lateinit var preferences: PreferencesManager
-    lateinit var requests: EditTaskRequests
+    companion object {
+        private lateinit var requests: EditTaskRequests
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,7 +39,6 @@ class CategoryFragment :
         binding.recyclelViewCategory.adapter = adapter
         preferences = PreferencesManager(requireContext())
         requests = EditTaskRequests(preferences.token, adapter, this, requireContext())
-//        updateTasks()
         binding.floatingActionButtonCategory.setOnClickListener {
             buildDialogPut()
             binding.recyclelViewCategory.layoutManager?.scrollToPosition(adapter.itemCount - 1)
@@ -47,15 +49,24 @@ class CategoryFragment :
     private fun buildDialogPut() {
         val input = EditText(requireContext())
         input.hint = getString(R.string.task)
-        AlertDialog.Builder(requireContext())
+        val dialig = AlertDialog.Builder(requireContext())
             .setTitle(R.string.newtask_title)
             .setView(input)
-            .setPositiveButton(R.string.pozition_button_add) { _, _ ->
-                requests.putTask(TaskNew(input.text.toString()))
-            }
-            .setNegativeButton(R.string.negativ_button_cancel) { _, _ -> }
+            .setPositiveButton(R.string.pozition_button_add, null)
+            .setNegativeButton(R.string.negativ_button_cancel, null)
             .create()
-            .show()
+        dialig.setOnShowListener {
+            dialig.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
+                if (input.text.toString().isNotEmpty()) {
+                    requests.putTask(TaskNew(input.text.toString()))
+                    dialig.dismiss()
+                }
+                else {
+                    input.error = getString(R.string.field_emptiness_error)
+                }
+            }
+        }
+        dialig.show()
     }
 
     fun updateTasks() {
@@ -81,11 +92,11 @@ class CategoryFragment :
         buildDialogDelete(task.id)
     }
 
-    override fun onErrorAnswer(text: String) {
+    override fun onErrorResponse(text: String) {
         Toast.makeText(requireContext(), text, Toast.LENGTH_LONG).show()
     }
 
-    override fun onAnswer(visibility: Int) {
+    override fun onResponse(visibility: Int) {
         binding.progressBarCategoty.visibility = visibility
     }
     override fun onNoToken() {
