@@ -60,8 +60,7 @@ class CategoryFragment :
                 if (input.text.toString().isNotEmpty()) {
                     requests.putTask(TaskNew(input.text.toString()))
                     dialig.dismiss()
-                }
-                else {
+                } else {
                     input.error = getString(R.string.field_emptiness_error)
                 }
             }

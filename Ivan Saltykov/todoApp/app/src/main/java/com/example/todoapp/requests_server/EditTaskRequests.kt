@@ -28,7 +28,8 @@ class EditTaskRequests(
                         action.onErrorResponse("Обновление")
                     } else
                         when (response.code()) {
-                            400 -> action.onErrorResponse(context.getString(R.string.not_found_task))
+                            400 -> action
+                                .onErrorResponse(context.getString(R.string.not_found_task))
                             401 -> {
                                 action.onErrorResponse(context.getString(R.string.no_token))
                                 action.onNoToken()
